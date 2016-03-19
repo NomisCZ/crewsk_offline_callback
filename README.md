@@ -1,7 +1,6 @@
 # Nastavení / informace
 
 > Crew.sk VIP Callback.
-  > Zdrojové kódy je zakázáno šířit/upravovat bez svolení autora!
 
 ##Použití:
 1.) Základní nastavení - includes/config.php:

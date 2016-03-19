@@ -1,11 +1,13 @@
-# crewsk_offline_callback
+# Nastavení / informace
 
 > Crew.sk VIP Callback.
   > Zdrojové kódy je zakázáno šířit/upravovat bez svolení autora!
 
-Použití:
+##Použití:
 1.) Základní nastavení - includes/config.php:
-  VYBERTE SI JEDNU VARIANTU!
+
+  > VYBERTE SI JEDNU VARIANTU!
+ 
     I.) Posílání příkazů přes webovou konzoli:
         a) $config['apiKey'] = 'KLÍČ, KTERÝ JSTE ZADALI PŘI VYTVOŘENÍ URL CALLBACKU';
         b) $config['webConsole'] = true;
@@ -20,6 +22,7 @@ Použití:
         e) $config['serverPass'] = 'RCON HESLO Z SERVER.CFG';
       
 2.) Upravení příkazů a SMS kódů - index.php:
+
     switch($parameters['code']){
     case 'mojeVIP1': // PŘÍKLAD PRO MINECRAFT SERVER
       $commands[] = "pex group vip user add :nick";

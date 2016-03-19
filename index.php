@@ -70,10 +70,11 @@ if (REMOTE_ADDR === $config['crewIP']) {
                 } else {
                     $r = new rcon($config['serverIP'],$config['serverPort'],$config['serverPass']);
                     if($r->Auth()) {
-                        foreach($commands as $command)
+                        foreach($commands as $command) {
                             $command = hydra::command($command, $parameters['variables']);
                             $r->rconCommand($command);
-                        echo core::status_msg('success','rcon_cmd_sent: '.$command);
+                            echo core::status_msg('success','rcon_cmd_sent: '.$command);
+                        } 
                     } else
                         exit(core::status_msg('error','rcon_failed_to_connect'));
                 }

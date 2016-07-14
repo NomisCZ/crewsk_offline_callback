@@ -39,21 +39,39 @@ if (REMOTE_ADDR === $config['crewIP']) {
 
     if ($parameters['key'] === $config['apiKey']) {
 
-        if ($parameters['action'] === 'activate') {
-            
-            switch($parameters['code']){
-                case 'startVIP':
-                    $commands[] = "pex group vip user add :nick";
-                    $commands[] = "say Hrac :nick si koupil startVIP. Dekujeme.";
-                    break;
-                case 'silverVIP':
-                    $commands[] = "pex group vip user add :nick";
-                    $commands[] = "say Hrac :nick si koupil silverVIP. Dekujeme.";
-                    break;
-                default:
-                    exit(core::status_msg('error','unknown_code'));
+        if ($parameters['action'] === 'activate' OR $parameters['action'] === 'deactivate' ) {
+
+            if ($parameters['action'] === 'activate') {
+                switch($parameters['code']){
+                    case 'startVIP':
+                        $commands[] = "pex group vip user add :nick";
+                        $commands[] = "say Hrac :nick si koupil startVIP. Dekujeme.";
+                        break;
+                    case 'silverVIP':
+                        $commands[] = "pex group vip user add :nick";
+                        $commands[] = "say Hrac :nick si koupil silverVIP. Dekujeme.";
+                        break;
+                    default:
+                        exit(core::status_msg('error','unknown_code'));
+                }
             }
-            
+
+            if ($parameters['action'] === 'deactivate') {
+                switch($parameters['code']){
+                    case 'startVIP':
+                        $commands[] = "pex group vip user add :nick";
+                        $commands[] = "say Hrac :nick si koupil startVIP. Dekujeme.";
+                        break;
+                    case 'silverVIP':
+                        $commands[] = "pex group vip user add :nick";
+                        $commands[] = "say Hrac :nick si koupil silverVIP. Dekujeme.";
+                        break;
+                    default:
+                        exit(core::status_msg('error','unknown_code'));
+                }
+            }
+
+
             if (count($commands)) {
                 if ($config['webConsole']) {
                     if ($hydra->testConn($config['serverID'], $config['serverPassv'])) {
@@ -77,7 +95,7 @@ if (REMOTE_ADDR === $config['crewIP']) {
                         } 
                     } else
                         exit(core::status_msg('error','rcon_failed_to_connect'));
-                }
+                 }
             } else
                 exit(core::status_msg('warning','no_cmds'));
 

@@ -1,0 +1,16 @@
+action=activate&timestamp=1415550311&gate=smscz&pricing=czchest1&sum=29.00&currency=czk&days=0&identifiers%5Bglobal%5D%5Btext%5D=NomisCZ&key=czchest1
+
+
+    /*foreach ($parameters as $parameter) {
+        $_GET[$parameter] = isset($_GET[$parameter]) ? $_GET[$parameter] : NULL;
+    }
+    foreach ($_GET[$parameter] as $value) {
+    if (isset ($value)) {
+        // ${$parameter} = $value; //As variable
+        $parameters[$parameter] = $value;
+    }
+    else
+        exit('err_missing_parameters');
+    }
+
+    */
